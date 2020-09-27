@@ -11,6 +11,7 @@ namespace Choose_Your_Class
         public int FuelLevel { get; set; }
         public int TireGrip { get; set; }
         public int Armor { get; set; }
+         public int Suspention { get; set; }
 
 
         //constructor
@@ -18,24 +19,62 @@ namespace Choose_Your_Class
         {
             MechanicalLevel = 100;
             FuelLevel = 100;
+            TireGrip = 100;
             Armor = 100;
-
+            Suspention = 100;
         }
         public void Repair()
         {
             MechanicalLevel = 25;
         }
-        public void Tick()
+        public void Refuel()
+        {
+            FuelLevel = 12;
+        }
+        public void AddAmor()
+        {
+           Armor = 22;
+        }
+
+        public virtual int GetMechanicalLevel()
+        {
+            return MechanicalLevel;
+        }
+
+        public virtual int GetFuelLevel()
+        {
+            return FuelLevel;
+        }
+
+        public virtual int GetTireGrip()
+        {
+            return TireGrip;
+        }
+        public virtual int GetArmor()
+        {
+            return Armor;
+        }
+
+            
+        public virtual int GetSuspention()
+        {
+            return Suspention;
+        }
+        public virtual void Tick()
         {
             MechanicalLevel -= 5;
             FuelLevel+= 5;
             Armor -= 5;
+            TireGrip -= 5;
+            Suspention -= 10;
+           
         }
 
         public virtual void DisplayStatus()
         {
-        Console.WriteLine($"{Name}  {Species}:");
-        Console.WriteLine($"Hunger:{GetHunger()}, Boredom {GetBoredom()}, Pet Health {GetHealth()}.\n");
+       
+        Console.WriteLine($"Mechanical :{GetMechanicalLevel()}, Gas {GetFuelLevel()}, Armor {GetArmor()}" +
+            $", tire Level {GetTireGrip()}, Handling {GetSuspention()}.\n");
         }
     }
 }
