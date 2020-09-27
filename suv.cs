@@ -8,39 +8,49 @@ namespace Choose_Your_Class
     { // properties
         public int BashBar { get; set; }
         public int Lift { get; set; }
+        public string Truck { get; set; }
 
-    }
-    // constuctor
-    public Suv()
-    {
-        public void Repair()
+
+        // constuctor
+        public Suv()
+        {
+            MechanicalLevel = 100;
+            FuelLevel = 100;
+            TireGrip = 100;
+            Armor = 100;
+            Suspention = 100;
+        }
+        public override void Repair()
         {
             MechanicalLevel = 25;
         }
-        public void Refuel()
+        public override void Refuel()
         {
             FuelLevel = 12;
         }
-        public void AddAmor()
+        public override void ChangeTires()
+        {
+            TireGrip = 5;
+        }
+        public override void AddAmor()
         {
             Armor = 22;
         }
-        public void Tick()
+        public override void AddHandling()
         {
-            MechanicalLevel -= 5;
-            FuelLevel += 5;
-            Armor -= 5;
-            TireGrip -= 5;
-            Suspention -= 10;
-
+            Suspention = 15;
         }
 
-        public virtual void DisplayStatus()
+        public string GetSuv()//
         {
-        Console.WriteLine($"{Name}  {Species}:");
-        Console.WriteLine($"Hunger:{GetHunger()}, Boredom {GetBoredom()}, Pet Health {GetHealth()}.\n");
+            return Truck;
         }
+        public override void DisplayStatus()
+        {
 
+            Console.WriteLine($"Mechanical :{GetMechanicalLevel()}, Gas {GetFuelLevel()}, Armor {GetArmor()}" +
+                $", tire Level {GetTireGrip()}, Handling {GetSuspention()}.\n");
+        }
     }
 }
 

@@ -4,35 +4,31 @@ using System.Text;
 
 namespace Choose_Your_Class
 {
-    public class Garage : Vehicle
+    public class Garage 
     {
-        public Garage() : base()
+
+        public List<Vehicle> ListOfVehicles = new List<Vehicle>();
+
+        public void AddVehicle(Vehicle vehicle)
         {
-            public List<Pet> ListOfPets = new List<Pet>();
-
-
-        public void AddPet(Pet pet)
-        {
-            ListOfPets.Add(pet);
-
+            ListOfVehicles.Add(vehicle);
         }
-
-        public Pet SelectPet()
+        public Vehicle  SelectVehicle()
         {
             int index = 1;
 
-            Console.WriteLine("Please select your pet from the shelter:");
-            foreach (Pet pet in ListOfPets)
+            Console.WriteLine("Please select your Vehicles:");
+            foreach (Vehicle vehicle in ListOfVehicles)
             {
-                Console.WriteLine($"{index}. {pet.Name} {pet.Species}");
+                
                 index++;
             }
 
             int indexSelected = Convert.ToInt32(Console.ReadLine());
-            return ListOfPets[indexSelected - 1];
+            return ListOfVehicles[indexSelected - 1];
         }
 
     }
 
-}
+
 }

@@ -23,17 +23,25 @@ namespace Choose_Your_Class
             Armor = 100;
             Suspention = 100;
         }
-        public void Repair()
+        public virtual void Repair()
         {
             MechanicalLevel = 25;
         }
-        public void Refuel()
+        public virtual void Refuel()
         {
             FuelLevel = 12;
         }
-        public void AddAmor()
+        public virtual void ChangeTires()
+        {
+            TireGrip = 5;
+        }
+        public virtual void AddAmor()
         {
            Armor = 22;
+        }
+        public virtual void AddHandling()
+        {
+            Suspention = 15;
         }
 
         public virtual int GetMechanicalLevel()
