@@ -6,9 +6,7 @@ namespace Choose_Your_Class
 {
     public class Garage 
     {
-
         public List<Vehicle> ListOfVehicles = new List<Vehicle>();
-
         public void AddVehicle(Vehicle vehicle)
         {
             ListOfVehicles.Add(vehicle);
@@ -16,19 +14,14 @@ namespace Choose_Your_Class
         public Vehicle  SelectVehicle()
         {
             int index = 1;
-
             Console.WriteLine("Please select your Vehicles:");
             foreach (Vehicle vehicle in ListOfVehicles)
             {
-                
+                Console.WriteLine($"{index}. {vehicle.Make} {vehicle.Model}");
                 index++;
             }
-
             int indexSelected = Convert.ToInt32(Console.ReadLine());
             return ListOfVehicles[indexSelected - 1];
         }
-
     }
-
-
 }

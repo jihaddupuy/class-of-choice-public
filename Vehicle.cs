@@ -7,21 +7,37 @@ namespace Choose_Your_Class
 {
     public class Vehicle
     { // properties 
+        public string Make { get; set; }
+        public string Model { get; set; }
         public int MechanicalLevel { get; set; }
         public int FuelLevel { get; set; }
         public int TireGrip { get; set; }
         public int Armor { get; set; }
          public int Suspention { get; set; }
-
-
-        //constructor
         public Vehicle()
         {
+            
             MechanicalLevel = 100;
             FuelLevel = 100;
             TireGrip = 100;
             Armor = 100;
             Suspention = 100;
+        }
+        public virtual void SetMake(string make )
+        {
+            Make = make;
+        }
+        public virtual string GetMake()
+        {
+            return Make;
+        }
+        public virtual void SetModel(string model)
+        {
+            Model = model;
+        }
+        public virtual string GetModel()
+        {
+            return Model;
         }
         public virtual void Repair()
         {
@@ -61,9 +77,7 @@ namespace Choose_Your_Class
         public virtual int GetArmor()
         {
             return Armor;
-        }
-
-            
+        }     
         public virtual int GetSuspention()
         {
             return Suspention;
@@ -74,31 +88,13 @@ namespace Choose_Your_Class
             FuelLevel+= 5;
             Armor -= 5;
             TireGrip -= 5;
-            Suspention -= 10;
-           
+            Suspention -= 10;   
         }
-
         public virtual void DisplayStatus()
         {
-       
-        Console.WriteLine($"Mechanical :{GetMechanicalLevel()}, Gas {GetFuelLevel()}, Armor {GetArmor()}" +
+          Console.WriteLine($"{Make} {Model}:");
+          Console.WriteLine($"Mechanical :{GetMechanicalLevel()}, Gas {GetFuelLevel()}, Armor {GetArmor()}" +
             $", tire Level {GetTireGrip()}, Handling {GetSuspention()}.\n");
         }
     }
 }
-
-
-//string[] CarClass = new string[7];
-
-//CarClass[0] = "not a option";
-//CarClass[1] = "4X4";
-//CarClass[4] = "Hatchback";
-//CarClass[6] = "Sourdough Bread";
-
-//Console.WriteLine("I just want " + Carclass[4] + "!!");
-//Console.ReadKey();
-
-//for (int i = 0; i < CarClass.Length; i++)
-//{
-    //string dinner = Carclass[i];
-   // Console.WriteLine(dinner);

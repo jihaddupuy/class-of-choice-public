@@ -6,19 +6,33 @@ namespace Choose_Your_Class
 {
     public class Suv : Vehicle
     { // properties
-        public int BashBar { get; set; }
-        public int Lift { get; set; }
-        public string Truck { get; set; }
-
-
-        // constuctor
-        public Suv()
+        //public int BashBar { get; set; }
+       // public int Lift { get; set; } <--DLC
+        public Suv(string make, string model)
         {
-            MechanicalLevel = 110;
+            Model = model;
+            Make = make;
+            MechanicalLevel = 100;
             FuelLevel = 100;
             TireGrip = 100;
             Armor = 100;
             Suspention = 100;
+        }
+        public override void SetMake(string make)
+        {
+            Make = make;
+        }
+        public override string GetMake()
+        {
+            return Make;
+        }
+        public override void SetModel(string model)
+        {
+            Model = model;
+        }
+        public override string GetModel()
+        {
+            return Model;
         }
         public override void Repair()
         {
@@ -30,7 +44,7 @@ namespace Choose_Your_Class
         }
         public override void ChangeTires()
         {
-            TireGrip = 5;
+            TireGrip = 14;
         }
         public override void AddAmor()
         {
@@ -40,14 +54,17 @@ namespace Choose_Your_Class
         {
             Suspention = 15;
         }
-
-        public string GetSuv()//
+        public void TickSuv()
         {
-            return Truck;
+            MechanicalLevel -= 5;
+            FuelLevel -= 3;
+            TireGrip-= 5;
+            Armor -=2;
+            Suspention -= 6;
         }
         public override void DisplayStatus()
         {
-
+            Console.WriteLine($"{Make} {Model}:");
             Console.WriteLine($"Mechanical :{GetMechanicalLevel()}, Gas {GetFuelLevel()}, Armor {GetArmor()}" +
                 $", tire Level {GetTireGrip()}, Handling {GetSuspention()}.\n");
         }
