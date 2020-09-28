@@ -14,7 +14,7 @@ namespace Choose_Your_Class
         // constuctor
         public Suv()
         {
-            MechanicalLevel = 100;
+            MechanicalLevel = 110;
             FuelLevel = 100;
             TireGrip = 100;
             Armor = 100;
