@@ -58,8 +58,8 @@ namespace Choose_Your_Class
         public void TickCar()
         {
             MechanicalLevel -= 4;
-            FuelLevel += 5;
-            TireGrip += 3;
+            FuelLevel -= 5;
+            TireGrip -= 3;
             Armor -= 3;
             Suspention -= 7;
         }

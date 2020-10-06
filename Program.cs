@@ -12,21 +12,12 @@ namespace Choose_Your_Class
 
             Vehicle vehicle = new Vehicle();
 
-            
-
-            
-
             List<Vehicle> listOfVhehicles = new List<Vehicle>();
-
-            
 
             Console.WriteLine("welcome to car mods");
             bool vehicleChoice = true;
             while (vehicleChoice)
             {
-
-
-
                 Console.WriteLine(" Pick Your vehicle ");
                 Console.WriteLine("1. Create a new Sports car");
                 Console.WriteLine("2. create a new Suv");
@@ -37,11 +28,9 @@ namespace Choose_Your_Class
                 Console.WriteLine("7. improve Handling");
                 Console.WriteLine("8. display vehicle status");
                 Console.WriteLine("9. Quit");
-
                 string menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 {
-
                     case "1":
                         Console.WriteLine("you have selected a sports car");
                         Console.WriteLine("what is the make of your Sports car?");
@@ -91,6 +80,7 @@ namespace Choose_Your_Class
                         foreach (Vehicle vehicle1 in garage.ListOfVehicles)
                         {
                             vehicle1.DisplayStatus();
+                            vehicle.Tick();
                         }
                         Console.WriteLine("status");
                         break;

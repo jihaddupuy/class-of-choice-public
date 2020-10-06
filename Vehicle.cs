@@ -85,7 +85,7 @@ namespace Choose_Your_Class
         public virtual void Tick()
         {
             MechanicalLevel -= 5;
-            FuelLevel+= 5;
+            FuelLevel-= 5;
             Armor -= 5;
             TireGrip -= 5;
             Suspention -= 10;   

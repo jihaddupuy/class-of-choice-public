@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Choose_Your_Class
-{
+{ // properties
     public class Suv : Vehicle
     { // properties
         //public int BashBar { get; set; }
        // public int Lift { get; set; } <--DLC
         public Suv(string make, string model)
-        {
+        { //constuctor
             Model = model;
             Make = make;
             MechanicalLevel = 100;
@@ -18,6 +18,7 @@ namespace Choose_Your_Class
             Armor = 100;
             Suspention = 100;
         }
+        //methods and objects
         public override void SetMake(string make)
         {
             Make = make;
